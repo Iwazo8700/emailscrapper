@@ -1,21 +1,23 @@
-
 %{
 #include <stdio.h>
 %}
 
-DIGITO [0-9]
-LETRA [A-Za-z]
-PONTOS [\-\_\.]
-ALFANUM [{LETRA}{DIGITO}]
-VALIDO [{PONTOS}{LETRA}{DIGITO}]*
+SPECIAL ([^a-zA-Z0-9]{-}[.,\n ])
+ALFANUM [a-zA-Z0-9] 
 
 %%
+({ALFANUM}[\.\-\_{ALFANUM}]*)?{ALFANUM}+[@]({ALFANUM}[\.\-\_{ALFANUM}]*)?{ALFANUM}+ {printf("%s\n", yytext);}
 
-([{ALFANUM}][{VALIDO}][{ALFANUM}]*[@][{ALFANUM}][{VALIDO}][{ALFANUM}*]) {printf("%s\n", yytext);}
+
+
+
+[[:space:]]+ ;
+[[:^space:]]+ ;
+[.\n]* ;
 
 %%
 
 int main() {
   yylex();
   return 0;
-}
+} 
