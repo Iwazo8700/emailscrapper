@@ -2,13 +2,16 @@
 #include <stdio.h>
 %}
 
-SPECIAL ([^a-zA-Z0-9]{-}[.,\n ])
-ALFANUM [a-zA-Z0-9] 
+ALFANUM [A-Za-z0-9]
+VALIDO [A-Za-z0-9\-\_\.]* 
+
 
 %%
-({ALFANUM}[\.\-\_{ALFANUM}]*)?{ALFANUM}+[@]({ALFANUM}[\.\-\_{ALFANUM}]*)?{ALFANUM}+({ALFANUM}{-}[.,\n ]);
 
-({ALFANUM}[\.\-\_{ALFANUM}]*)?{ALFANUM}+[@]({ALFANUM}[\.\-\_{ALFANUM}]*)?{ALFANUM}+ {printf("%s\n", yytext)}
+
+({ALFANUM}?{VALIDO}{ALFANUM}@{ALFANUM}?{VALIDO}{ALFANUM})/[\.] {printf("%s\n", yytext);} 
+
+({ALFANUM}?{VALIDO}{ALFANUM}@{ALFANUM}?{VALIDO}{ALFANUM}) {printf("%s\n", yytext);}
 
 
 
