@@ -696,7 +696,7 @@ YY_DECL
 		}
 
 	{
-#line 9 "src/main.l"
+#line 8 "src/main.l"
 
 
 
@@ -762,34 +762,34 @@ case 1:
 (yy_c_buf_p) = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 12 "src/main.l"
+#line 11 "src/main.l"
 {printf("%s\n", yytext);} 
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "src/main.l"
+#line 13 "src/main.l"
 {printf("%s\n", yytext);}
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 19 "src/main.l"
+#line 18 "src/main.l"
 ;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 20 "src/main.l"
+#line 19 "src/main.l"
 ;
 	YY_BREAK
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 21 "src/main.l"
+#line 20 "src/main.l"
 ;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 23 "src/main.l"
+#line 22 "src/main.l"
 ECHO;
 	YY_BREAK
 #line 796 "src/main.c"
@@ -1793,7 +1793,13 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 23 "src/main.l"
+#line 22 "src/main.l"
 
 
+
+int main(){
+    yylex();
+    return 0;
+
+}
 

@@ -3,8 +3,7 @@
 %}
 
 ALFANUM [A-Za-z0-9]
-VALIDO [A-Za-z0-9\-\_\.]* 
-
+VALIDO [A-Za-z0-9\-\_\.]* 	
 
 %%
 
@@ -21,3 +20,9 @@ VALIDO [A-Za-z0-9\-\_\.]*
 [.\n]* ;
 
 %%
+
+int main(){
+    yylex();
+    return 0;
+
+}
